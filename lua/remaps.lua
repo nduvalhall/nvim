@@ -34,3 +34,6 @@ vim.keymap.set("n", "l", "<Right>")
 -- nvim-tree
 vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeFocus<CR>")
 vim.keymap.set("n", "<leader>E", "<cmd>NeoTreeClose<CR>")
+
+-- format
+vim.keymap.set("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>")
