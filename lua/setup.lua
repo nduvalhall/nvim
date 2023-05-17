@@ -1,14 +1,14 @@
 -- bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -69,6 +69,8 @@ local plugins = {
         config = function()
             require("neo-tree").setup {
                 statusline = false,
+                close_if_last_window = true,
+                reveal = true,
                 filesystem = {
                     follow_current_file = true,
                 },
@@ -105,7 +107,7 @@ local plugins = {
         config = {
             require("indent_blankline").setup {
                 char = "│",
-                buftype_exclude = {"terminal"},
+                buftype_exclude = { "terminal" },
                 show_trailing_blankline_indent = false,
                 show_first_indent_level = false,
                 show_current_context = false,
