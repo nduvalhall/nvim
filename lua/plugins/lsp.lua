@@ -10,6 +10,9 @@ require('mason-lspconfig').setup({
     }
 })
 
+-- format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local on_attach = function(_, _)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
@@ -21,7 +24,7 @@ local on_attach = function(_, _)
     vim.keymap.set('n', 'gl', vim.diagnostic.open_float, {})
 end
 
-require('lspconfig').lua_ls.setup{
+require('lspconfig').lua_ls.setup {
     on_attach = on_attach,
     capabilites = capabilities,
     settings = {
@@ -35,32 +38,32 @@ require('lspconfig').lua_ls.setup{
     },
 }
 
-require('lspconfig').tsserver.setup{
+require('lspconfig').tsserver.setup {
     on_attach = on_attach,
     capabilites = capabilities,
 }
 
-require('lspconfig').pyright.setup{
+require('lspconfig').pyright.setup {
     on_attach = on_attach,
     capabilites = capabilities,
 }
 
-require('lspconfig').rust_analyzer.setup{
+require('lspconfig').rust_analyzer.setup {
     on_attach = on_attach,
     capabilites = capabilities,
 }
 
-require('lspconfig').marksman.setup{
+require('lspconfig').marksman.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
 
-require('lspconfig').clangd.setup{
+require('lspconfig').clangd.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
 
-require('lspconfig').taplo.setup{
+require('lspconfig').taplo.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
