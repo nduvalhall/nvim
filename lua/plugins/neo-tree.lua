@@ -7,3 +7,6 @@ require("neo-tree").setup {
         follow_current_file = true,
     }
 }
+
+vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeFocus<CR>")
+vim.keymap.set("n", "<leader>E", "<cmd>NeoTreeClose<CR>")
