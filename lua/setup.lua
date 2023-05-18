@@ -14,10 +14,16 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     "github/copilot.vim",
+    { "s1n7ax/nvim-window-picker", config = function()
+        require("window-picker").setup({
+            selection_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        })
+    end },
     "nvim-telescope/telescope-file-browser.nvim",
     "catppuccin/nvim",
     "ggandor/leap.nvim",
-    { "nvim-lualine/lualine.nvim",       requires = "kyazdani42/nvim-web-devicons" },
+    { "numToStr/Comment.nvim",     config = true },
+    { "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" },
     "windwp/nvim-autopairs",
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     { "nvim-telescope/telescope.nvim",   dependencies = "nvim-lua/plenary.nvim" },
@@ -32,7 +38,7 @@ local plugins = {
     },
     "lewis6991/gitsigns.nvim",
     "lukas-reineke/indent-blankline.nvim",
-    { 'akinsho/git-conflict.nvim', version = "*", config = true },
+    { "akinsho/git-conflict.nvim", version = "*", config = true },
 
     -- lsp
     "williamboman/mason.nvim",
@@ -46,7 +52,6 @@ local plugins = {
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
-
 }
 
 
