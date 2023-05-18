@@ -15,49 +15,12 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     "github/copilot.vim",
     "nvim-telescope/telescope-file-browser.nvim",
-
-    {
-        "catppuccin/nvim",
-        lazy = false,
-        priority = 1000,
-    },
-
-    {
-        "ggandor/leap.nvim",
-        config = function()
-            require("leap").add_default_mappings()
-        end,
-    },
-
-    {
-        "nvim-lualine/lualine.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            require("lualine").setup({
-                options = {
-                    theme = "catppuccin"
-                }
-            })
-        end
-    },
-
-    {
-        "windwp/nvim-autopairs",
-        config = function()
-            require("nvim-autopairs").setup()
-        end,
-    },
-
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-    },
-
-    {
-        "nvim-telescope/telescope.nvim",
-        dependencies = "nvim-lua/plenary.nvim",
-    },
-
+    "catppuccin/nvim",
+    "ggandor/leap.nvim",
+    { "nvim-lualine/lualine.nvim",       requires = "kyazdani42/nvim-web-devicons" },
+    "windwp/nvim-autopairs",
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-telescope/telescope.nvim",   dependencies = "nvim-lua/plenary.nvim" },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -66,27 +29,10 @@ local plugins = {
             "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim",
         },
-        config = function()
-            require("neo-tree").setup {
-                statusline = false,
-                close_if_last_window = true,
-                reveal = true,
-                filesystem = {
-                    follow_current_file = true,
-                },
-                buffers = {
-                    follow_current_file = true,
-                }
-            }
-        end,
     },
-
-    {
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns").setup()
-        end,
-    },
+    "lewis6991/gitsigns.nvim",
+    "lukas-reineke/indent-blankline.nvim",
+    { 'akinsho/git-conflict.nvim', version = "*", config = true },
 
     -- lsp
     "williamboman/mason.nvim",
@@ -101,40 +47,8 @@ local plugins = {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
 
-    -- indent lines
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        config = {
-            require("indent_blankline").setup {
-                char = "│",
-                buftype_exclude = { "terminal" },
-                show_trailing_blankline_indent = false,
-                show_first_indent_level = false,
-                show_current_context = false,
-                context_patterns = {
-                    "class",
-                    "function",
-                    "method",
-                    "^if",
-                    "^while",
-                    "^for",
-                    "^object",
-                    "^table",
-                    "block",
-                    "arguments",
-                    "if_statement",
-                    "else_clause",
-                    "jsx_element",
-                    "jsx_self_closing_element",
-                    "try_statement",
-                    "catch_clause",
-                    "import_statement",
-                    "operation_type",
-                },
-            },
-        },
-    }
 }
+
 
 local opts = {}
 
