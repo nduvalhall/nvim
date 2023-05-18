@@ -14,12 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     "github/copilot.vim",
-    { "s1n7ax/nvim-window-picker", config = function()
-        require("window-picker").setup({
-            selection_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-        })
-    end },
-    "nvim-telescope/telescope-file-browser.nvim",
+    "s1n7ax/nvim-window-picker",
     "catppuccin/nvim",
     "ggandor/leap.nvim",
     { "numToStr/Comment.nvim",     config = true },
