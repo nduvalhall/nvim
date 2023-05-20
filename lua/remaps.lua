@@ -24,17 +24,11 @@ keymap.set("n", "<leader>sx", ":bd<CR>")    -- close current split window
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<C-d>", "<C-d>zz")
 
--- terminal
-keymap.set("n", "<leader>t", ":terminal<CR>")
-keymap.set("t", "<Esc>", "<C-\\><C-n>")
-
 -- remap to arrow keys
 keymap.set("n", "j", "<Down>")
 keymap.set("n", "k", "<Up>")
 keymap.set("n", "h", "<Left>")
 keymap.set("n", "l", "<Right>")
-
--- nvim-tree
 
 -- format
 keymap.set("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>")
