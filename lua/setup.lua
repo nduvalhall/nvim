@@ -34,7 +34,6 @@ local plugins = {
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
     "folke/zen-mode.nvim",
-    "folke/twilight.nvim",
     { "numToStr/Comment.nvim",           config = true },
     { "akinsho/git-conflict.nvim",       config = true },
     { "nvim-lualine/lualine.nvim",       requires = "kyazdani42/nvim-web-devicons" },
