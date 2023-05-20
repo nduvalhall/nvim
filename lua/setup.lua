@@ -16,24 +16,10 @@ local plugins = {
     "github/copilot.vim",
     "s1n7ax/nvim-window-picker",
     "catppuccin/nvim",
-    "ggandor/leap.nvim",
-    { "numToStr/Comment.nvim",     config = true },
-    { "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" },
     "windwp/nvim-autopairs",
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-    { "nvim-telescope/telescope.nvim",   dependencies = "nvim-lua/plenary.nvim" },
-    {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons",
-            "MunifTanjim/nui.nvim",
-        },
-    },
+    "ggandor/leap.nvim",
     "lewis6991/gitsigns.nvim",
     "lukas-reineke/indent-blankline.nvim",
-    { "akinsho/git-conflict.nvim", version = "*", config = true },
 
     -- lsp
     "williamboman/mason.nvim",
@@ -47,10 +33,22 @@ local plugins = {
     "saadparwaiz1/cmp_luasnip",
     "L3MON4D3/LuaSnip",
     "rafamadriz/friendly-snippets",
+    "folke/zen-mode.nvim",
+    "folke/twilight.nvim",
+    { "numToStr/Comment.nvim",           config = true },
+    { "akinsho/git-conflict.nvim",       config = true },
+    { "nvim-lualine/lualine.nvim",       requires = "kyazdani42/nvim-web-devicons" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-telescope/telescope.nvim",   dependencies = "nvim-lua/plenary.nvim" },
+    {
+        "nvim-neo-tree/neo-tree.nvim",
+        branch = "v2.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+            "MunifTanjim/nui.nvim",
+        },
+    },
 }
 
-
-local opts = {}
-
-
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugins, {})
