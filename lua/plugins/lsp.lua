@@ -7,11 +7,26 @@ require('mason-lspconfig').setup({
         'rust_analyzer',
         'marksman',
         'clangd',
+        'julials',
+    }
+})
+require('mason-null-ls').setup({
+    ensure_installed = {
+        'prettier',
+        'black',
     }
 })
 
 -- format on save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+local null_ls = require('null-ls')
+local sources = {
+    null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.black,
+}
+null_ls.setup({
+    sources = sources,
+})
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local on_attach = function(_, _)
@@ -23,6 +38,7 @@ local on_attach = function(_, _)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, {})
     vim.keymap.set('n', 'gl', vim.diagnostic.open_float, {})
 end
+
 
 require('lspconfig').lua_ls.setup {
     on_attach = on_attach,
