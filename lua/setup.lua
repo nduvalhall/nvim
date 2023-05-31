@@ -16,6 +16,7 @@ local plugins = {
     "github/copilot.vim",
     "s1n7ax/nvim-window-picker",
     "catppuccin/nvim",
+    "rose-pine/neovim",
     "windwp/nvim-autopairs",
     "ggandor/leap.nvim",
     "lewis6991/gitsigns.nvim",
