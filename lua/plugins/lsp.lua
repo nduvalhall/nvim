@@ -77,6 +77,12 @@ require("lspconfig").marksman.setup {
 require("lspconfig").clangd.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    config = {
+        cmd = {
+            "clangd",
+            "--clang-format-style=file",
+        },
+    },
 }
 
 require("lspconfig").taplo.setup {

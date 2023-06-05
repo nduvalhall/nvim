@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     "github/copilot.vim",
     "s1n7ax/nvim-window-picker",
-    "catppuccin/nvim",
+    -- "catppuccin/nvim",
     "rose-pine/neovim",
     "windwp/nvim-autopairs",
     "ggandor/leap.nvim",
