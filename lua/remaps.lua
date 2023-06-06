@@ -10,15 +10,15 @@ keymap.set("n", "<leader>h", ":nohl<CR>")
 keymap.set("n", "x", '"_x')
 
 -- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>") -- increment
-keymap.set("n", "<leader>-", "<C-x>") -- decrement
+keymap.set("n", "<leader>+", "<C-a>")
+keymap.set("n", "<leader>-", "<C-x>")
 
 -- window management
-keymap.set("n", "<leader>sv", "<C-w>v")     -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s")     -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=")     -- make split windows equal width & height
-keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
-keymap.set("n", "<leader>sx", ":bd<CR>")    -- close current split window
+keymap.set("n", "<leader>sv", "<C-w>v")
+keymap.set("n", "<leader>sh", "<C-w>s")
+keymap.set("n", "<leader>se", "<C-w>=")
+keymap.set("n", "<leader>sx", ":close<CR>")
+keymap.set("n", "<leader>sx", ":bd<CR>")
 
 -- movement
 keymap.set("n", "<C-u>", "<C-u>zz")
@@ -32,3 +32,6 @@ keymap.set("n", "l", "<Right>")
 
 -- format
 keymap.set("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>")
+
+-- random
+keymap.set("n", "<CR>", "ciw")
