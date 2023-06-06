@@ -34,7 +34,7 @@ opt.wrap = false
 -- use system clipboard
 opt.clipboard = "unnamedplus"
 
-opt.colorcolumn = "80"
+opt.colorcolumn = "81"
 
 
 if vim.fn.has('wsl') == 1 then

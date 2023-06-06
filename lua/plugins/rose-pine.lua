@@ -6,7 +6,7 @@ require('rose-pine').setup({
     -- disable_background = true,
 
     highlight_groups = {
-        ColorColumn = { bg = 'subtle' },
+        ColorColumn = { bg = 'rose' },
     },
 })
 
