@@ -1,5 +1,5 @@
--- require('plugins.catppuccin')
-require('plugins.rose-pine')
+require('plugins.catppuccin')
+-- require('plugins.rose-pine')
 require('plugins.cmp')
 require('plugins.lsp')
 require('plugins.telescope')
