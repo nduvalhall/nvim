@@ -16,6 +16,7 @@ local plugins = {
     "github/copilot.vim",
     "s1n7ax/nvim-window-picker",
     "catppuccin/nvim",
+    { "ellisonleao/gruvbox.nvim",        priority = 1000 },
     "rose-pine/neovim",
     "Mofiqul/dracula.nvim",
     "folke/tokyonight.nvim",
@@ -25,6 +26,7 @@ local plugins = {
     "ggandor/leap.nvim",
     "lewis6991/gitsigns.nvim",
     "lukas-reineke/indent-blankline.nvim",
+    "EdenEast/nightfox.nvim",
 
     -- lsp
     "williamboman/mason.nvim",

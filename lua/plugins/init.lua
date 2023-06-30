@@ -1,4 +1,5 @@
 require('plugins.catppuccin')
+-- require('plugins.nightfox')
 -- require('plugins.rose-pine')
 require('plugins.cmp')
 require('plugins.lsp')
