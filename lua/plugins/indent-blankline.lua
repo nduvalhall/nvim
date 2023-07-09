@@ -24,4 +24,10 @@ require("indent_blankline").setup {
         "import_statement",
         "operation_type",
     },
+
+    char_highlight_list = {
+        "IndentBlankLineIndent",
+    },
 }
+
+vim.cmd [[highlight IndentBlanklineIndent guifg=#44475a gui=nocombine]]

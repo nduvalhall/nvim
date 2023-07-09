@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     "github/copilot.vim",
     "s1n7ax/nvim-window-picker",
-    "Mofiqul/dracula.nvim",
+    { "Mofiqul/dracula.nvim",            priority = 1000 },
     "windwp/nvim-autopairs",
     "ggandor/leap.nvim",
     "lewis6991/gitsigns.nvim",
