@@ -39,7 +39,7 @@ local plugins = {
     { "numToStr/Comment.nvim",           config = true },
     { "akinsho/git-conflict.nvim",       config = true },
     { "nvim-lualine/lualine.nvim",       requires = "kyazdani42/nvim-web-devicons" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",                      priority = 999 },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", },
     { "nvim-telescope/telescope.nvim",   dependencies = "nvim-lua/plenary.nvim" },
     {
         "nvim-neo-tree/neo-tree.nvim",
