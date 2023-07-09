@@ -15,18 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     "github/copilot.vim",
     "s1n7ax/nvim-window-picker",
-    "catppuccin/nvim",
-    { "ellisonleao/gruvbox.nvim",        priority = 1000 },
-    "rose-pine/neovim",
     "Mofiqul/dracula.nvim",
-    "folke/tokyonight.nvim",
-    "Mofiqul/vscode.nvim",
-    "loctvl842/monokai-pro.nvim",
     "windwp/nvim-autopairs",
     "ggandor/leap.nvim",
     "lewis6991/gitsigns.nvim",
     "lukas-reineke/indent-blankline.nvim",
-    "EdenEast/nightfox.nvim",
 
     -- lsp
     "williamboman/mason.nvim",
@@ -46,7 +39,7 @@ local plugins = {
     { "numToStr/Comment.nvim",           config = true },
     { "akinsho/git-conflict.nvim",       config = true },
     { "nvim-lualine/lualine.nvim",       requires = "kyazdani42/nvim-web-devicons" },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",                      priority = 999 },
     { "nvim-telescope/telescope.nvim",   dependencies = "nvim-lua/plenary.nvim" },
     {
         "nvim-neo-tree/neo-tree.nvim",

@@ -1,5 +1,5 @@
 require('setup')
+require('colors')
 require('remaps')
 require('options')
 require('plugins')
-require('colors')
