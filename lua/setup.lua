@@ -14,6 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     "github/copilot.vim",
+    {
+        "kdheepak/lazygit.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
     "s1n7ax/nvim-window-picker",
     { "Mofiqul/dracula.nvim",            priority = 1000 },
     "windwp/nvim-autopairs",
