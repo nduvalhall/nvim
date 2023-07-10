@@ -35,3 +35,6 @@ keymap.set("n", "<leader>F", "<cmd>lua vim.lsp.buf.format()<CR>")
 
 -- random
 keymap.set("n", "<CR>", "ciw")
+
+-- lazygit
+keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
