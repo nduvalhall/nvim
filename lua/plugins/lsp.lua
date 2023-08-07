@@ -2,12 +2,8 @@ require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
-        "tsserver",
         "pyright",
-        "rust_analyzer",
-        "marksman",
         "clangd",
-        "julials",
     }
 })
 require("mason-null-ls").setup({
@@ -54,24 +50,10 @@ require("lspconfig").lua_ls.setup {
     },
 }
 
-require("lspconfig").tsserver.setup {
-    on_attach = on_attach,
-    capabilites = capabilities,
-}
 
 require("lspconfig").pyright.setup {
     on_attach = on_attach,
     capabilites = capabilities,
-}
-
-require("lspconfig").rust_analyzer.setup {
-    on_attach = on_attach,
-    capabilites = capabilities,
-}
-
-require("lspconfig").marksman.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
 }
 
 require("lspconfig").clangd.setup {
@@ -83,9 +65,4 @@ require("lspconfig").clangd.setup {
             "--clang-format-style=file",
         },
     },
-}
-
-require("lspconfig").taplo.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
 }

@@ -9,25 +9,7 @@ treesitter.setup({
     highlight = {
         enable = true,
     },
-
     ensure_installed = {
-        "json",
-        "javascript",
-        "typescript",
-        "tsx",
-        "yaml",
-        "html",
-        "css",
-        "markdown",
-        "svelte",
-        "graphql",
-        "bash",
-        "lua",
-        "vim",
-        "dockerfile",
-        "gitignore",
-        "python",
-        "vue",
-        "rust",
-    },
+	"python",
+	},
 })
