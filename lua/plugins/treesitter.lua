@@ -10,6 +10,7 @@ treesitter.setup({
         enable = true,
     },
     ensure_installed = {
-	"python",
-	},
+        "python",
+        "c",
+    },
 })

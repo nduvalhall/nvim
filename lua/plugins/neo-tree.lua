@@ -3,8 +3,9 @@ require("neo-tree").setup {
     filesystem = {
         follow_current_file = true,
         use_libuv_file_watcher = true,
+        show_hidden_files = true,
     },
 }
 
 vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeFocus<CR>")
-vim.keymap.set("n", "<leader>E", "<cmd>NeoTreeClose<CR>")
+vim.keymap.set("n", "<leader>E", "<cmd>NeoTreeRevealToggle<CR>")
