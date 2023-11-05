@@ -25,7 +25,7 @@ keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<C-d>", "<C-d>zz")
 
 -- remap to arrow keys
-keymap.set("n", "j", "<Down>")
+keymap.set("n", "j", "<Down>zz")
 keymap.set("n", "k", "<Up>")
 keymap.set("n", "h", "<Left>")
 keymap.set("n", "l", "<Right>")
@@ -38,3 +38,6 @@ keymap.set("n", "<CR>", "ciw")
 
 -- lazygit
 keymap.set("n", "<leader>lg", "<cmd>LazyGit<CR>")
+
+-- toggle line numbers
+keymap.set("n", "<leader>ln", "<cmd>set nu!<CR>")

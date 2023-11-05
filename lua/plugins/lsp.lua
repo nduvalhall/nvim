@@ -1,9 +1,13 @@
+local utils = require("utils")
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
         "lua_ls",
         "pyright",
         "clangd",
+        "tsserver",
+        "vuels",
     }
 })
 require("mason-null-ls").setup({
@@ -52,6 +56,26 @@ require("lspconfig").lua_ls.setup {
 require("lspconfig").pyright.setup {
     on_attach = on_attach,
     capabilites = capabilities,
+    before_init = function(_, config)
+        local p
+        if vim.env.VIRTUAL_ENV then
+            p = require("null-ls.utils").path.join(vim.env.VIRTUAL_ENV, "bin", "python3")
+        else
+            p = utils.find_cmd("python3", ".venv/bin")
+        end
+        config.settings.python.pythonPath = p
+    end,
+
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = "workspace",
+                useLibraryCodeForTypes = true,
+                disableOrganizeImports = true,
+            },
+        },
+    },
 }
 
 require("lspconfig").clangd.setup {
@@ -64,3 +88,19 @@ require("lspconfig").clangd.setup {
         },
     },
 }
+
+require("lspconfig").tsserver.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+require("lspconfig").vuels.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+
+local luasnip = require("luasnip")
+luasnip.filetype_extend("javascript", { "html" })
+luasnip.filetype_extend("javascriptreact", { "html" })
+luasnip.filetype_extend("typescriptreact", { "html" })

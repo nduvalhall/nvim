@@ -3,9 +3,8 @@ require("neo-tree").setup {
     filesystem = {
         follow_current_file = true,
         use_libuv_file_watcher = true,
-        show_hidden_files = true,
+        hide_dotfiles = false,
     },
 }
 
-vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeFocus<CR>")
-vim.keymap.set("n", "<leader>E", "<cmd>NeoTreeRevealToggle<CR>")
+vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeFloatToggle<CR>")

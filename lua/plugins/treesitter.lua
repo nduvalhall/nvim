@@ -12,5 +12,11 @@ treesitter.setup({
     ensure_installed = {
         "python",
         "c",
+        "vue",
+        "rust",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
     },
 })

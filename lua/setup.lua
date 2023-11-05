@@ -14,7 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     "github/copilot.vim",
-    { "catppuccin/nvim",                 name = "catppuccin",                      priority = 1000 },
+    { "catppuccin/nvim",                 name = "catppuccin",                   priority = 1000 },
+    "chriskempson/base16-vim",
     -- {
     --     "kdheepak/lazygit.nvim",
     --     dependencies = {
@@ -30,8 +31,8 @@ local plugins = {
     -- { "Mofiqul/dracula.nvim", priority = 1000 },
     "windwp/nvim-autopairs",
     "ggandor/leap.nvim",
-    "lewis6991/gitsigns.nvim",
-    "lukas-reineke/indent-blankline.nvim",
+    -- "lewis6991/gitsigns.nvim",
+    -- "lukas-reineke/indent-blankline.nvim",
 
     -- lsp
     "williamboman/mason.nvim",
@@ -51,8 +52,8 @@ local plugins = {
 
     "folke/zen-mode.nvim",
     { "numToStr/Comment.nvim",           config = true },
-    { "akinsho/git-conflict.nvim",       config = true },
-    { "nvim-lualine/lualine.nvim",       requires = "kyazdani42/nvim-web-devicons" },
+    -- { "akinsho/git-conflict.nvim",       config = true },
+    -- { "nvim-lualine/lualine.nvim",       requires = "kyazdani42/nvim-web-devicons" },
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", },
     { "nvim-telescope/telescope.nvim",   dependencies = "nvim-lua/plenary.nvim" },
     {
