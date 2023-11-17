@@ -1,7 +1,5 @@
 local opt = vim.opt -- for conciseness
 
--- line numbers
--- opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
 opt.tabstop = 4 -- 4 spaces for tabs
@@ -14,7 +12,9 @@ opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- appearance
-opt.signcolumn = "no" -- show sign column so that text doesn't shift
+opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+opt.number = true -- show line numbers
+opt.numberwidth = 6
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position

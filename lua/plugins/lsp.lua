@@ -8,6 +8,7 @@ require("mason-lspconfig").setup({
         "clangd",
         "tsserver",
         "vuels",
+        "rust_analyzer",
     }
 })
 require("mason-null-ls").setup({
@@ -95,6 +96,12 @@ require("lspconfig").tsserver.setup {
 }
 
 require("lspconfig").vuels.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+
+require("lspconfig").rust_analyzer.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }

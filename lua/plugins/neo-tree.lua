@@ -7,4 +7,4 @@ require("neo-tree").setup {
     },
 }
 
-vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeFloatToggle<CR>")
+vim.keymap.set("n", "<leader>e", "<cmd>NeoTreeFocusToggle<CR>")
