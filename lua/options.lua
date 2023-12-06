@@ -14,7 +14,6 @@ opt.smartcase = true -- if you include mixed case in your search, assumes you wa
 -- appearance
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 opt.number = true -- show line numbers
-opt.numberwidth = 6
 
 -- backspace
 opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position

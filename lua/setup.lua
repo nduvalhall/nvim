@@ -19,6 +19,7 @@ local plugins = {
     "s1n7ax/nvim-window-picker",
     "windwp/nvim-autopairs",
     "ggandor/leap.nvim",
+    "lukas-reineke/indent-blankline.nvim",
 
 
     -- lsp
