@@ -14,12 +14,15 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     "github/copilot.vim",
-    { "catppuccin/nvim",                 name = "catppuccin",                   priority = 1000 },
+    { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
+    { 'rose-pine/neovim', name = "rose-pine",  priority = 1000 },
     "chriskempson/base16-vim",
     "s1n7ax/nvim-window-picker",
     "windwp/nvim-autopairs",
     "ggandor/leap.nvim",
     "lukas-reineke/indent-blankline.nvim",
+    "hoob3rt/lualine.nvim",
+    "lewis6991/gitsigns.nvim",
 
 
     -- lsp

@@ -104,6 +104,9 @@ require("lspconfig").vuels.setup {
 require("lspconfig").rust_analyzer.setup {
     on_attach = on_attach,
     capabilities = capabilities,
+    config = {
+        update_in_insert = true,
+    },
 }
 
 require("lspconfig").ocamllsp.setup {
