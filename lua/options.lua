@@ -1,39 +1,23 @@
-local opt = vim.opt -- for conciseness
+local opt = vim.opt
 
-
--- tabs & indentation
-opt.tabstop = 4 -- 4 spaces for tabs
-opt.shiftwidth = 4 -- 4 spaces for indent width
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
-
--- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
-
--- appearance
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
-opt.number = true -- show line numbers
-
--- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
-
--- split windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
-
-opt.iskeyword:append("-") -- consider string-string as whole word
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.autoindent = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.signcolumn = "yes"
+opt.number = true
+opt.backspace = "indent,eol,start"
+opt.splitright = true
+opt.splitbelow = true
+opt.iskeyword:append("-")
 opt.swapfile = false
-
 opt.so = 10
 opt.termguicolors = true
-
 opt.wrap = false
-
--- use system clipboard
+opt.colorcolumn = "80"
 opt.clipboard = "unnamedplus"
-
-
 
 if vim.fn.has('wsl') == 1 then
     vim.api.nvim_create_autocmd('TextYankPost', {

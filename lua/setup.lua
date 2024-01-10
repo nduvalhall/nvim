@@ -14,8 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
     "github/copilot.vim",
-    { "catppuccin/nvim",  name = "catppuccin", priority = 1000 },
-    { 'rose-pine/neovim', name = "rose-pine",  priority = 1000 },
+    { "catppuccin/nvim",       name = "catppuccin", priority = 1000 },
+    { 'rose-pine/neovim',      name = "rose-pine",  priority = 1000 },
+    { "folke/tokyonight.nvim", name = "tokyonight", priority = 1000 },
+
+    "nanozuki/tabby.nvim",
+
     "chriskempson/base16-vim",
     "s1n7ax/nvim-window-picker",
     "windwp/nvim-autopairs",
@@ -56,4 +60,8 @@ local plugins = {
     },
 }
 
-require("lazy").setup(plugins, {})
+local config = {
+    lazy = true
+}
+
+require("lazy").setup(plugins, config)

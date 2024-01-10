@@ -9,10 +9,12 @@ require('catppuccin').setup({
     }
 })
 
--- vim.cmd('colorscheme catppuccin')
 
 require('rose-pine').setup({
     disable_italics = true,
 })
 
-vim.cmd('colorscheme rose-pine')
+
+-- vim.cmd('colorscheme catppuccin')
+-- vim.cmd('colorscheme rose-pine')
+vim.cmd('colorscheme tokyonight-storm')
