@@ -18,6 +18,19 @@ local plugins = {
     { 'rose-pine/neovim',      name = "rose-pine",  priority = 1000 },
     { "folke/tokyonight.nvim", name = "tokyonight", priority = 1000 },
 
+    {
+        "toppair/peek.nvim",
+        event = { "VeryLazy" },
+        build = "deno task --quiet build:fast",
+        config = function()
+            require("peek").setup({
+                app = 'firefox'
+            })
+            vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+            vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+        end,
+    },
+
     "nanozuki/tabby.nvim",
 
     "chriskempson/base16-vim",

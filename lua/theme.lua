@@ -17,4 +17,4 @@ require('rose-pine').setup({
 
 -- vim.cmd('colorscheme catppuccin')
 -- vim.cmd('colorscheme rose-pine')
-vim.cmd('colorscheme tokyonight-storm')
+vim.cmd('colorscheme tokyonight-moon')

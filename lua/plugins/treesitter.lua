@@ -9,14 +9,5 @@ treesitter.setup({
     highlight = {
         enable = true,
     },
-    ensure_installed = {
-        "python",
-        "c",
-        "vue",
-        "rust",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-    },
+    auto_install = true,
 })

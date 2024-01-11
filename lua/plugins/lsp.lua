@@ -114,6 +114,12 @@ require("lspconfig").ocamllsp.setup {
     capabilities = capabilities,
 }
 
+require("lspconfig").bashls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+
 
 local luasnip = require("luasnip")
 luasnip.filetype_extend("javascript", { "html" })
