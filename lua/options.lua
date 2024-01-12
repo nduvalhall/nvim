@@ -16,7 +16,7 @@ opt.swapfile = false
 opt.so = 10
 opt.termguicolors = true
 opt.wrap = false
-opt.colorcolumn = "80"
+opt.colorcolumn = "120"
 opt.clipboard = "unnamedplus"
 
 if vim.fn.has('wsl') == 1 then
