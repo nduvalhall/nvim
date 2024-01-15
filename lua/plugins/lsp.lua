@@ -119,6 +119,18 @@ require("lspconfig").bashls.setup {
     capabilities = capabilities,
 }
 
+require("lspconfig").dockerls.setup {
+
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+require("lspconfig").docker_compose_language_service.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+
+
 
 
 local luasnip = require("luasnip")
