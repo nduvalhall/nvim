@@ -7,7 +7,7 @@ require("mason-lspconfig").setup({
         "pyright",
         "clangd",
         "tsserver",
-        "vuels",
+        "volar",
         "rust_analyzer",
     }
 })
@@ -95,7 +95,8 @@ require("lspconfig").tsserver.setup {
     capabilities = capabilities,
 }
 
-require("lspconfig").vuels.setup {
+require("lspconfig").volar.setup {
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
     on_attach = on_attach,
     capabilities = capabilities,
 }

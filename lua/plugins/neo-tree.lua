@@ -3,7 +3,10 @@ require("neo-tree").setup {
     filesystem = {
         follow_current_file = true,
         use_libuv_file_watcher = true,
-        hide_dotfiles = false,
+        filered_items = {
+            hide_dotfiles = false,
+            hide_gitignored = true,
+        }
     },
 }
 
