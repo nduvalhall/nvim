@@ -13,6 +13,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+    "sindrets/diffview.nvim",
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" }
+    },
+    "MunifTanjim/prettier.nvim",
     "github/copilot.vim",
     { "catppuccin/nvim",                     name = "catppuccin", priority = 1000 },
     { 'rose-pine/neovim',                    name = "rose-pine",  priority = 1000 },
