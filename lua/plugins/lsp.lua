@@ -19,7 +19,9 @@ require("mason-null-ls").setup({
 })
 
 -- format on save
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+-- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+
+
 local null_ls = require("null-ls")
 local sources = {
     null_ls.builtins.formatting.prettier,
@@ -38,6 +40,7 @@ local on_attach = function(_, _)
     vim.keymap.set("n", "go", vim.lsp.buf.type_definition, {})
     vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
+    vim.keymap.set("n", "gf", vim.lsp.buf.format, {})
 end
 
 
@@ -95,9 +98,22 @@ require("lspconfig").tsserver.setup {
     capabilities = capabilities,
 }
 
+
+
+local on_attach_vue = function(_, _)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+    vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {})
+    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {})
+    vim.keymap.set("n", "go", vim.lsp.buf.type_definition, {})
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+    vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
+    vim.keymap.set("n", "gf", "<cmd>Prettier<CR>", {})
+end
+
 require("lspconfig").volar.setup {
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-    on_attach = on_attach,
+    on_attach = on_attach_vue,
     capabilities = capabilities,
 }
 
