@@ -1,6 +1,7 @@
 local opt = vim.opt
 
 opt.tabstop = 4
+opt.cmdheight = 0
 opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
@@ -16,7 +17,7 @@ opt.swapfile = false
 opt.so = 10
 opt.termguicolors = true
 opt.wrap = false
-opt.colorcolumn = "120"
+opt.colorcolumn = "80"
 opt.clipboard = "unnamedplus"
 
 if vim.fn.has('wsl') == 1 then

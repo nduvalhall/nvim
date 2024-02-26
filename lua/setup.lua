@@ -13,6 +13,24 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
+    { "catppuccin/nvim",                  priority = 1000 },
+    { "rose-pine/neovim",                 priority = 1000 },
+    { "folke/tokyonight.nvim",            priority = 1000 },
+    { "sainnhe/sonokai",                  priority = 1000 },
+    { "sainnhe/everforest",               priority = 1000 },
+    { "sainnhe/gruvbox-material",         priority = 1000 },
+    { "sainnhe/edge",                     priority = 1000 },
+    { "oxfist/night-owl.nvim",            priority = 1000 },
+    { "scottmckendry/cyberdream.nvim",    priority = 1000 },
+    { "Yazeed1s/minimal.nvim",            priority = 1000 },
+    { "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
+    { "EdenEast/nightfox.nvim",           priority = 1000 },
+
+
+
+
+
+
     "sindrets/diffview.nvim",
     {
         "ThePrimeagen/harpoon",
@@ -21,10 +39,7 @@ local plugins = {
     },
     "MunifTanjim/prettier.nvim",
     "github/copilot.vim",
-    { "catppuccin/nvim",                     name = "catppuccin", priority = 1000 },
-    { 'rose-pine/neovim',                    name = "rose-pine",  priority = 1000 },
-    { "folke/tokyonight.nvim",               name = "tokyonight", priority = 1000 },
-    { "lukas-reineke/indent-blankline.nvim", main = "ibl",        opts = {} },
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl",                          opts = {} },
     {
         "iamcco/markdown-preview.nvim",
         cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -37,7 +52,6 @@ local plugins = {
 
     "nanozuki/tabby.nvim",
 
-    "chriskempson/base16-vim",
     "s1n7ax/nvim-window-picker",
     "windwp/nvim-autopairs",
     "ggandor/leap.nvim",
@@ -63,9 +77,9 @@ local plugins = {
 
 
     "folke/zen-mode.nvim",
-    { "numToStr/Comment.nvim",           config = true },
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate", },
-    { "nvim-telescope/telescope.nvim",   dependencies = "nvim-lua/plenary.nvim" },
+    { "numToStr/Comment.nvim",               config = true },
+    { "nvim-treesitter/nvim-treesitter",     build = ":TSUpdate", },
+    { "nvim-telescope/telescope.nvim",       dependencies = "nvim-lua/plenary.nvim" },
     {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v2.x",
@@ -78,7 +92,7 @@ local plugins = {
 }
 
 local config = {
-    lazy = true
+    lazy = false
 }
 
 require("lazy").setup(plugins, config)
