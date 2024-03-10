@@ -15,6 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 local plugins = {
     { "catppuccin/nvim",                  priority = 1000 },
     { "rose-pine/neovim",                 priority = 1000 },
+    { "loctvl842/monokai-pro.nvim",       priority = 1000 },
     { "folke/tokyonight.nvim",            priority = 1000 },
     { "sainnhe/sonokai",                  priority = 1000 },
     { "sainnhe/everforest",               priority = 1000 },

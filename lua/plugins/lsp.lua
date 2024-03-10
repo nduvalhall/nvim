@@ -9,6 +9,7 @@ require("mason-lspconfig").setup({
         "tsserver",
         "volar",
         "rust_analyzer",
+        "gopls",
     }
 })
 require("mason-null-ls").setup({
@@ -42,6 +43,12 @@ local on_attach = function(_, _)
     vim.keymap.set("n", "gl", vim.diagnostic.open_float, {})
     vim.keymap.set("n", "gf", vim.lsp.buf.format, {})
 end
+
+
+require("lspconfig").gopls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
 
 
 require("lspconfig").lua_ls.setup {
