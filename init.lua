@@ -25,7 +25,7 @@ vim.autoindent = true
 
 if vim.fn.has("wsl") == 1 then
 	vim.api.nvim_create_autocmd("TextYankPost", {
-		group = vim.api.nvim_create_autogroup("Yank", { clear = true }),
+		group = vim.api.nvim_create_augroup("Yank", { clear = true }),
 		callback = function()
 			vim.fn.system("clip.exe", vim.fn.getreg('"'))
 		end,
@@ -118,7 +118,7 @@ require("lazy").setup({
 				end,
 			},
 			{ "nvim-telescope/telescope-ui-select.nvim" },
-			{ "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
+			{ "nvim-tree/nvim-web-devicons" },
 		},
 		config = function()
 			require("telescope").setup({
@@ -164,13 +164,14 @@ require("lazy").setup({
 					end
 
 					map("K", vim.lsp.buf.hover, "Hover Documentation")
-					map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-					map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-					map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-					map("<leader>D", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
+					map("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+					map("gr", vim.lsp.buf.references, "[G]oto [R]eferences")
+					map("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+					map("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
 					map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 					map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+					map("gl", vim.diagnostic.open_float, "Show [L]ine Diagnostics")
 
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client and client.server_capabilities.documentHighlightProvider then
@@ -193,7 +194,28 @@ require("lazy").setup({
 			local servers = {
 				gopls = {},
 				volar = {},
-				pyright = {},
+				pyright = {
+					before_init = function(_, config)
+						local p
+						if vim.env.VIRTUAL_ENV then
+							p = require("null-ls.utils").path.join(vim.env.VIRTUAL_ENV, "bin", "python3")
+						else
+							p = (".venv/bin/python3"):format(vim.fn.getcwd())
+						end
+						config.settings.python.pythonPath = p
+					end,
+
+					settings = {
+						python = {
+							analysis = {
+								autoSearchPaths = true,
+								diagnosticMode = "workspace",
+								useLibraryCodeForTypes = true,
+								disableOrganizeImports = true,
+							},
+						},
+					},
+				},
 				rust_analyzer = {},
 				tsserver = {},
 				lua_ls = {
@@ -306,7 +328,7 @@ require("lazy").setup({
 					},
 				},
 			})
-			vim.keymap.set("n", "<leader>e", "<cmd>Neotree right toggle focus<CR>")
+			vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle focus<CR>")
 		end,
 	},
 
