@@ -22,6 +22,10 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.wrap = false
 vim.autoindent = true
+vim.shiftwidth = 4
+vim.tabstop = 4
+vim.softtabstop = 4
+vim.expandtab = true
 
 if vim.fn.has("wsl") == 1 then
 	vim.api.nvim_create_autocmd("TextYankPost", {
@@ -194,6 +198,7 @@ require("lazy").setup({
 			local servers = {
 				gopls = {},
 				volar = {},
+				taplo = {},
 				pyright = {
 					before_init = function(_, config)
 						local p
