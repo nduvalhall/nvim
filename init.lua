@@ -76,7 +76,7 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"tpope/vim-sleuth",
+	{ "Darazaki/indent-o-matic" },
 
 	{ "numToStr/Comment.nvim", opts = {} },
 
