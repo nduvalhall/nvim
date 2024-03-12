@@ -274,6 +274,7 @@ require("lazy").setup({
 				typescript = { "prettier" },
 				vue = { "prettier" },
 				json = { "prettier" },
+				markdown = { "prettier" },
 			},
 		},
 	},
