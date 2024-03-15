@@ -289,7 +289,7 @@ require("lazy").setup({
 		init = function()
 			require("ibl").setup({
 				indent = {
-					char = "⬝",
+					char = ".",
 				},
 				scope = { enabled = false },
 			})
@@ -368,10 +368,11 @@ require("lazy").setup({
 	},
 
 	{
-		"folke/tokyonight.nvim",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		priority = 1000,
 		init = function()
-			vim.cmd.colorscheme("tokyonight-moon")
+			vim.cmd.colorscheme("catppuccin-mocha")
 			vim.cmd.hi("Comment gui=none")
 		end,
 	},
