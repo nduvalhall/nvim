@@ -72,6 +72,21 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	-- colorschemes
+	{ "catppuccin/nvim", priority = 1000 },
+	{ "rose-pine/neovim", priority = 1000 },
+	{ "loctvl842/monokai-pro.nvim", priority = 1000 },
+	{ "folke/tokyonight.nvim", priority = 1000 },
+	{ "sainnhe/sonokai", priority = 1000 },
+	{ "sainnhe/everforest", priority = 1000 },
+	{ "sainnhe/gruvbox-material", priority = 1000 },
+	{ "sainnhe/edge", priority = 1000 },
+	{ "oxfist/night-owl.nvim", priority = 1000 },
+	{ "scottmckendry/cyberdream.nvim", priority = 1000 },
+	{ "Yazeed1s/minimal.nvim", priority = 1000 },
+	{ "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
+	{ "EdenEast/nightfox.nvim", priority = 1000 },
+
 	{ "junegunn/fzf", build = "./install --bin" },
 
 	{
@@ -102,6 +117,7 @@ require("lazy").setup({
 
 			-- misc
 			vim.keymap.set("n", "<leader>fh", fzf.help_tags, { desc = "[F]ind [H]elp" })
+			vim.keymap.set("n", "<leader>ft", fzf.colorschemes, { desc = "[F]ind [T]hemes" })
 		end,
 	},
 
@@ -364,16 +380,6 @@ require("lazy").setup({
 					{ name = "path" },
 				},
 			})
-		end,
-	},
-
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		init = function()
-			vim.cmd.colorscheme("catppuccin-mocha")
-			vim.cmd.hi("Comment gui=none")
 		end,
 	},
 
