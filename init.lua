@@ -71,7 +71,36 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		local colorscheme_path = vim.fn.expand("$HOME/.local/state/nvim/colorscheme")
+		local f = io.open(colorscheme_path, "r")
+
+		if f then
+			local colorscheme = f:read("*l")
+			f:close()
+			pcall(function()
+				vim.cmd("colorscheme " .. colorscheme)
+			end)
+		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	callback = function()
+		local colorscheme_path = vim.fn.expand("$HOME/.local/state/nvim/colorscheme")
+		local f = io.open(colorscheme_path, "w+")
+
+		if f then
+			f:write(vim.g.colors_name)
+			f:close()
+			return
+		end
+	end,
+})
+
 require("lazy").setup({
+
 	-- colorschemes
 	{ "catppuccin/nvim", priority = 1000 },
 	{ "rose-pine/neovim", priority = 1000 },
