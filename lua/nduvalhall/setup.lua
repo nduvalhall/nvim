@@ -172,6 +172,7 @@ require("lazy").setup({
 			require("fzf-lua").setup({})
 
 			local fzf = require("fzf-lua")
+			vim.keymap.set("n", "<leader>fb", fzf.builtin, { desc = "[F]ind [B]uiltin" })
 
 			-- files
 			vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "[F]ind [F]iles" })
@@ -239,17 +240,6 @@ require("lazy").setup({
 
 	{
 		"github/copilot.vim",
-	},
-
-	{
-		"nvimdev/dashboard-nvim",
-		event = "VimEnter",
-		config = function()
-			require("dashboard").setup({
-				-- config
-			})
-		end,
-		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 	},
 
 	{
