@@ -3,7 +3,7 @@ local utils = require("nduvalhall.utils")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.opt.cmdheight = 0
+-- vim.opt.cmdheight = 0
 vim.opt.backspace = "indent,eol,start"
 vim.opt.number = true
 vim.opt.mouse = "a"
