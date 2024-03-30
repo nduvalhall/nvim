@@ -221,6 +221,7 @@ require("lazy").setup({
 				vue = { "prettier" },
 				json = { "prettier" },
 				markdown = { "prettier" },
+				sh = { "shfmt" },
 			},
 		},
 	},
