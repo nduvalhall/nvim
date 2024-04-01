@@ -240,10 +240,6 @@ require("lazy").setup({
 	},
 
 	{
-		"github/copilot.vim",
-	},
-
-	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		init = function()
