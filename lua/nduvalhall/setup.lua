@@ -234,7 +234,7 @@ require("lazy").setup({
 
 	{
 		"ggandor/leap.nvim",
-		init = function()
+		config = function()
 			require("leap").add_default_mappings()
 		end,
 	},
@@ -250,7 +250,7 @@ require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		init = function()
+		config = function()
 			require("ibl").setup({
 				indent = {
 					char = ".",
@@ -270,7 +270,7 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
-		init = function()
+		config = function()
 			require("neo-tree").setup({
 				close_if_last_window = true,
 				filesystem = {
