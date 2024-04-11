@@ -239,12 +239,12 @@ require("lazy").setup({
 		end,
 	},
 
-	{
+	--[[ {
 		"github/copilot.vim",
 		config = function()
 			vim.keymap.set("n", "<leader>ct", "<cmd>Copilot disable<CR>", { desc = "[C]opilot [T]oggle" })
 		end,
-	},
+	}, ]]
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -344,7 +344,7 @@ require("lazy").setup({
 		"echasnovski/mini.nvim",
 		config = function()
 			require("mini.ai").setup({ n_lines = 500 })
-			require("mini.surround").setup()
+			-- require("mini.surround").setup()
 			local statusline = require("mini.statusline")
 			statusline.setup({ use_icons = vim.g.have_nerd_font })
 
