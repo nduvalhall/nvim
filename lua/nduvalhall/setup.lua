@@ -243,7 +243,6 @@ require("lazy").setup({
 		"github/copilot.vim",
 		config = function()
 			vim.keymap.set("n", "<leader>ct", "<cmd>Copilot disable<CR>", { desc = "[C]opilot [T]oggle" })
-			vim.cmd("Copilot disable")
 		end,
 	},
 
