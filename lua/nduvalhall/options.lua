@@ -73,6 +73,12 @@ vim.api.nvim_create_autocmd("VimEnter", {
 					vim.cmd("colorscheme " .. colorscheme)
 				end)
 			end
+		elseif vim.fn.has("mac") == 1 then
+			if utils.capture("defaults read -g AppleInterfaceStyle") == "Dark" then
+				vim.cmd("colorscheme tokyonight-moon")
+			else
+				vim.cmd("colorscheme dawnfox")
+			end
 		else
 			if utils.capture("gsettings get org.gnome.desktop.interface color-scheme") == "'prefer-dark'" then
 				vim.cmd("colorscheme tokyonight-moon")
