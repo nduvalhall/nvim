@@ -113,3 +113,12 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 		vim.opt.cmdheight = 0
 	end,
 })
+
+local make_transparent = function()
+	vim.cmd("highlight Normal guibg=none")
+	vim.cmd("highlight NonText guibg=none")
+	vim.cmd("highlight Normal ctermbg=none")
+	vim.cmd("highlight NonText ctermbg=none")
+end
+
+vim.keymap.set("n", "<leader>b", make_transparent)
