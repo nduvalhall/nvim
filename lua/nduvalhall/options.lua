@@ -3,7 +3,7 @@ local utils = require("nduvalhall.utils")
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- vim.opt.cmdheight = 0
+vim.opt.cmdheight = 0
 vim.opt.backspace = "indent,eol,start"
 vim.opt.number = true
 vim.opt.mouse = "a"
@@ -60,7 +60,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("VimEnter", {
+--[[ vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		if vim.fn.has("wsl") == 1 then
 			local colorscheme_path = vim.fn.expand("$HOME/.local/state/nvim/colorscheme")
@@ -87,7 +87,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 			end
 		end
 	end,
-})
+}) ]]
 
 vim.api.nvim_create_autocmd("ColorScheme", {
 	callback = function()
@@ -114,11 +114,10 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
 	end,
 })
 
-local make_transparent = function()
+--[[ local make_transparent = function()
 	vim.cmd("highlight Normal guibg=none")
 	vim.cmd("highlight NonText guibg=none")
 	vim.cmd("highlight Normal ctermbg=none")
 	vim.cmd("highlight NonText ctermbg=none")
 end
-
-vim.keymap.set("n", "<leader>b", make_transparent)
+vim.keymap.set("n", "<leader>b", make_transparent) ]]
