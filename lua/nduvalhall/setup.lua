@@ -45,7 +45,7 @@ require("lazy").setup({
 	{
 		"folke/which-key.nvim",
 		event = "VimEnter",
-		config = function()
+		init = function()
 			require("which-key").setup()
 			require("which-key").register({
 				["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
@@ -66,7 +66,7 @@ require("lazy").setup({
 
 			{ "j-hui/fidget.nvim", opts = {} },
 		},
-		config = function()
+		init = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 				callback = function(event)
@@ -168,7 +168,7 @@ require("lazy").setup({
 
 	{
 		"ibhagwan/fzf-lua",
-		config = function()
+		init = function()
 			require("fzf-lua").setup({})
 
 			local fzf = require("fzf-lua")
@@ -192,6 +192,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "gr", fzf.lsp_references, { desc = "[G]oto [R]eferences" })
 			vim.keymap.set("n", "gd", fzf.lsp_definitions, { desc = "[G]oto [D]efinition" })
 			vim.keymap.set("n", "gD", fzf.lsp_declarations, { desc = "[G]oto [D]eclarations" })
+			vim.keymap.set("n", "gt", fzf.lsp_typedefs, { desc = "[G]oto [D]eclarations" })
 			vim.keymap.set("n", "<leader>ca", fzf.lsp_code_actions, { desc = "[C]ode [A]ctions" })
 
 			-- misc
@@ -201,9 +202,13 @@ require("lazy").setup({
 	},
 
 	{
+		"iamcco/markdown-preview.nvim",
+	},
+
+	{
 		"stevearc/conform.nvim",
 		opts = {
-			notify_on_error = false,
+			notify_on_error = true,
 			format_on_save = {
 				timeout_ms = 500,
 				lsp_fallback = true,
@@ -220,6 +225,7 @@ require("lazy").setup({
 				html = { "prettier" },
 				vue = { "prettier" },
 				json = { "prettier" },
+				jsonc = { "prettier" },
 				markdown = { "prettier" },
 				sh = { "shfmt" },
 			},
@@ -234,14 +240,14 @@ require("lazy").setup({
 
 	{
 		"ggandor/leap.nvim",
-		config = function()
+		init = function()
 			require("leap").add_default_mappings()
 		end,
 	},
 
 	--[[ {
 		"github/copilot.vim",
-		config = function()
+		init = function()
 			vim.keymap.set("n", "<leader>ct", "<cmd>Copilot disable<CR>", { desc = "[C]opilot [T]oggle" })
 		end,
 	}, ]]
@@ -249,7 +255,7 @@ require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		config = function()
+		init = function()
 			require("ibl").setup({
 				indent = {
 					char = ".",
@@ -269,7 +275,7 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons",
 			"MunifTanjim/nui.nvim",
 		},
-		config = function()
+		init = function()
 			require("neo-tree").setup({
 				close_if_last_window = true,
 				filesystem = {
@@ -280,6 +286,11 @@ require("lazy").setup({
 					filtered_items = {
 						hide_dotfiles = false,
 						hide_gitignored = true,
+					},
+				},
+				buffer = {
+					follow_current_file = {
+						enable = true,
 					},
 				},
 			})
@@ -305,7 +316,7 @@ require("lazy").setup({
 			"hrsh7th/cmp-path",
 			"rafamadriz/friendly-snippets",
 		},
-		config = function()
+		init = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			luasnip.config.setup({})
@@ -342,7 +353,7 @@ require("lazy").setup({
 
 	{
 		"echasnovski/mini.nvim",
-		config = function()
+		init = function()
 			require("mini.ai").setup({ n_lines = 500 })
 			-- require("mini.surround").setup()
 			local statusline = require("mini.statusline")
@@ -358,7 +369,7 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		config = function()
+		init = function()
 			---@diagnostic disable-next-line: missing-fields
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
