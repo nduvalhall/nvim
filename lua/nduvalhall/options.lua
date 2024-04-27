@@ -1,12 +1,9 @@
-local utils = require("nduvalhall.utils")
-
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.backspace = "indent,eol,start"
 vim.opt.number = true
 vim.opt.mouse = "a"
-vim.opt.showmode = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.breakindent = true
 vim.opt.undofile = true

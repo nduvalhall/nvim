@@ -10,12 +10,20 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-	-- colorschemes
-	{ "folke/tokyonight.nvim", priority = 1000 },
+	{
+		"folke/tokyonight.nvim",
+		priority = 1000,
+	},
 
-	{ "junegunn/fzf", build = "./install --bin" },
+	{
+		"junegunn/fzf",
+		build = "./install --bin",
+	},
 
-	{ "numToStr/Comment.nvim", opts = {} },
+	{
+		"numToStr/Comment.nvim",
+		opts = {},
+	},
 
 	{
 		"lewis6991/gitsigns.nvim",
@@ -31,30 +39,14 @@ require("lazy").setup({
 	},
 
 	{
-		"folke/which-key.nvim",
-		event = "VimEnter",
-		init = function()
-			require("which-key").setup()
-			require("which-key").register({
-				["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-				["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-				["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-				["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-			})
-		end,
-	},
-
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
-
 			{ "j-hui/fidget.nvim", opts = {} },
 		},
-		init = function()
+		config = function()
 			vim.api.nvim_create_autocmd("LspAttach", {
 				group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 				callback = function(event)
@@ -156,7 +148,7 @@ require("lazy").setup({
 
 	{
 		"ibhagwan/fzf-lua",
-		init = function()
+		config = function()
 			require("fzf-lua").setup({})
 
 			local fzf = require("fzf-lua")
@@ -193,7 +185,7 @@ require("lazy").setup({
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		build = "cd app && npm install",
-		init = function()
+		config = function()
 			vim.g.mkdp_filetypes = { "markdown" }
 		end,
 		ft = { "markdown" },
@@ -234,7 +226,7 @@ require("lazy").setup({
 
 	{
 		"ggandor/leap.nvim",
-		init = function()
+		config = function()
 			require("leap").add_default_mappings()
 		end,
 	},
@@ -246,7 +238,7 @@ require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		init = function()
+		config = function()
 			require("ibl").setup({
 				indent = {
 					char = ".",
@@ -277,7 +269,7 @@ require("lazy").setup({
 			"hrsh7th/cmp-path",
 			"rafamadriz/friendly-snippets",
 		},
-		init = function()
+		config = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
 			luasnip.config.setup({})
@@ -314,7 +306,7 @@ require("lazy").setup({
 
 	{
 		"echasnovski/mini.nvim",
-		init = function()
+		config = function()
 			require("mini.ai").setup({ n_lines = 500 })
 		end,
 	},
@@ -322,7 +314,7 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		init = function()
+		config = function()
 			---@diagnostic disable-next-line: missing-fields
 			require("nvim-treesitter.configs").setup({
 				ensure_installed = {
