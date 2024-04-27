@@ -239,12 +239,9 @@ require("lazy").setup({
 		end,
 	},
 
-	--[[ {
-		"github/copilot.vim",
-		init = function()
-			vim.keymap.set("n", "<leader>ct", "<cmd>Copilot disable<CR>", { desc = "[C]opilot [T]oggle" })
-		end,
-	}, ]]
+	-- {
+	-- 	"github/copilot.vim",
+	-- },
 
 	{
 		"lukas-reineke/indent-blankline.nvim",
@@ -259,36 +256,6 @@ require("lazy").setup({
 					filetypes = { "NvimTree", "dashboard", "packer", "fzf", "fugitive", "git", "help", "lspinfo" },
 				},
 			})
-		end,
-	},
-
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-		init = function()
-			require("neo-tree").setup({
-				close_if_last_window = true,
-				filesystem = {
-					follow_current_file = {
-						enable = true,
-					},
-					use_libuv_file_watcher = true,
-					filtered_items = {
-						hide_dotfiles = false,
-						hide_gitignored = true,
-					},
-				},
-				buffer = {
-					follow_current_file = {
-						enable = true,
-					},
-				},
-			})
-			vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle focus<CR>")
 		end,
 	},
 
@@ -349,14 +316,6 @@ require("lazy").setup({
 		"echasnovski/mini.nvim",
 		init = function()
 			require("mini.ai").setup({ n_lines = 500 })
-			-- require("mini.surround").setup()
-			local statusline = require("mini.statusline")
-			statusline.setup({ use_icons = vim.g.have_nerd_font })
-
-			---@diagnostic disable-next-line: duplicate-set-field
-			statusline.section_location = function()
-				return "%2l:%-2v"
-			end
 		end,
 	},
 
