@@ -147,15 +147,36 @@ require("lazy").setup({
 	},
 
 	{
+		"kdheepak/lazygit.nvim",
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		-- setting the keybinding for LazyGit with 'keys' is recommended in
+		-- order to load the plugin when the command is run for the first time
+		keys = {
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+		},
+	},
+
+	{
 		"ibhagwan/fzf-lua",
 		config = function()
-			require("fzf-lua").setup({})
+			require("fzf-lua").setup({ "telescope" })
 
 			local fzf = require("fzf-lua")
 			vim.keymap.set("n", "<leader>fb", fzf.builtin, { desc = "[F]ind [B]uiltin" })
 
 			-- files
 			vim.keymap.set("n", "<leader>ff", fzf.files, { desc = "[F]ind [F]iles" })
+			vim.keymap.set("n", "<leader>fr", fzf.resume, { desc = "[F]ind [F]iles" })
 			vim.keymap.set("n", "<leader>fs", fzf.grep, { desc = "[F]ind [S]tring" })
 			vim.keymap.set("n", "<leader>fc", fzf.grep_cword, { desc = "[F]ind string under [C]ursor" })
 			vim.keymap.set("n", "<leader>fdd", fzf.diagnostics_document, { desc = "[F]ind [D]iagnostics [D]ocument" })
@@ -173,7 +194,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "gd", fzf.lsp_definitions, { desc = "[G]oto [D]efinition" })
 			vim.keymap.set("n", "gD", fzf.lsp_declarations, { desc = "[G]oto [D]eclarations" })
 			vim.keymap.set("n", "gt", fzf.lsp_typedefs, { desc = "[G]oto [D]eclarations" })
-			vim.keymap.set("n", "<leader>ca", fzf.lsp_code_actions, { desc = "[C]ode [A]ctions" })
+			vim.keymap.set("n", "ga", fzf.lsp_code_actions, { desc = "[C]ode [A]ctions" })
 
 			-- misc
 			vim.keymap.set("n", "<leader>fh", fzf.help_tags, { desc = "[F]ind [H]elp" })
