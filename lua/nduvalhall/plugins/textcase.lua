@@ -1,1 +1,1 @@
-require("textcase").setup()
+return { "johmsalas/text-case.nvim", opts = {} }

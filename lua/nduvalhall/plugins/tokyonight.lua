@@ -1,1 +1,1 @@
-require("tokyonight").setup()
+return { "folke/tokyonight.nvim" }

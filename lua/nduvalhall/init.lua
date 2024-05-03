@@ -1,5 +1,4 @@
 require("nduvalhall.keymaps")
 require("nduvalhall.options")
-require("nduvalhall.setup")
+require("nduvalhall.lazy")
 require("nduvalhall.colorscheme")
-require("nduvalhall.plugins")
