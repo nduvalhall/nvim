@@ -1,6 +1,3 @@
----@diagnostic disable: unused-local
-local utils = require("nduvalhall.utils")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -10,20 +7,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 
-	{
-		"folke/tokyonight.nvim",
-		priority = 1000,
-	},
-
-	{
-		"junegunn/fzf",
-		build = "./install --bin",
-	},
-
-	{
-		"numToStr/Comment.nvim",
-		opts = {},
-	},
+	{ "folke/tokyonight.nvim" },
+	{ "numToStr/Comment.nvim" },
+	{ "johmsalas/text-case.nvim" },
+	{ "nvim-tree/nvim-web-devicons" },
+	{ "stevearc/oil.nvim" },
 
 	{
 		"lewis6991/gitsigns.nvim",
