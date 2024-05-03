@@ -1,3 +1,5 @@
-require("nduvalhall.plugins.oil")
 require("nduvalhall.plugins.comment")
 require("nduvalhall.plugins.lsp")
+require("nduvalhall.plugins.oil")
+require("nduvalhall.plugins.textcase")
+require("nduvalhall.plugins.tokyonight")
