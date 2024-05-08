@@ -1,5 +1,14 @@
 return {
 	"neovim/nvim-lspconfig",
+	init = function()
+		vim.opt.updatetime = 250
+		vim.lsp.set_log_level("error")
+		vim.diagnostic.config({
+			underline = true,
+			update_in_insert = true,
+			severity_sort = true,
+		})
+	end,
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
@@ -40,13 +49,18 @@ return {
 		local servers = {
 
 			volar = {
-				filetypes = { "vue" },
+				filetypes = {
+					"vue",
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact",
+					"json",
+					"jsonc",
+				},
 				init_options = {
 					vue = {
 						hybridMode = false,
-					},
-					typescript = {
-						tsdk = "/usr/lib/node_modules/@vue/typescript-plugin",
 					},
 				},
 			},
@@ -74,22 +88,22 @@ return {
 				},
 			},
 
-			tsserver = {
-				init_options = {
-					plugins = {
-						{
-							name = "@vue/typescript-plugin",
-							location = "/usr/lib/node_modules/@vue/typescript-plugin",
-							languages = { "javascript", "typescript", "vue" },
-						},
-					},
-				},
-				filetypes = {
-					"javascript",
-					"typescript",
-					"vue",
-				},
-			},
+			-- tsserver = {
+			-- 	init_options = {
+			-- 		plugins = {
+			-- 			{
+			-- 				name = "@vue/typescript-plugin",
+			-- 				location = "/usr/lib/node_modules/@vue/typescript-plugin",
+			-- 				languages = { "javascript", "typescript", "vue" },
+			-- 			},
+			-- 		},
+			-- 	},
+			-- 	filetypes = {
+			-- 		"javascript",
+			-- 		"typescript",
+			-- 		"vue",
+			-- 	},
+			-- },
 
 			lua_ls = {
 				settings = {
