@@ -16,4 +16,5 @@ return {
 	require("nduvalhall.plugins.todo-comments"),
 	require("nduvalhall.plugins.mini"),
 	require("nduvalhall.plugins.nvim-treesitter"),
+	require("nduvalhall.plugins.dashboard"),
 }
