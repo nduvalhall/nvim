@@ -7,7 +7,7 @@ return {
 	config = function()
 		local directories = {}
 
-		local file = io.open("/Users/mduvalhall/.local/share/proj/config", "r+")
+		local file = io.open(vim.fn.expand("~/.local/share/proj/config"), "r+")
 
 		if file then
 			local index = 1
