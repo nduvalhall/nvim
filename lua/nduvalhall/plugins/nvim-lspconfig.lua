@@ -38,9 +38,19 @@ return {
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		local servers = {
-			gopls = {},
-			volar = {},
-			taplo = {},
+
+			volar = {
+				filetypes = { "vue" },
+				init_options = {
+					vue = {
+						hybridMode = false,
+					},
+					typescript = {
+						tsdk = "/usr/lib/node_modules/@vue/typescript-plugin",
+					},
+				},
+			},
+
 			pyright = {
 				before_init = function(_, config)
 					local p
@@ -63,8 +73,24 @@ return {
 					},
 				},
 			},
-			rust_analyzer = {},
-			tsserver = {},
+
+			tsserver = {
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = "/usr/lib/node_modules/@vue/typescript-plugin",
+							languages = { "javascript", "typescript", "vue" },
+						},
+					},
+				},
+				filetypes = {
+					"javascript",
+					"typescript",
+					"vue",
+				},
+			},
+
 			lua_ls = {
 				settings = {
 					Lua = {
