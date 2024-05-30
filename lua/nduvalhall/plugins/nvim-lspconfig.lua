@@ -47,7 +47,6 @@ return {
 		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 		local servers = {
-
 			volar = {
 				filetypes = {
 					"vue",
@@ -88,23 +87,6 @@ return {
 				},
 			},
 
-			-- tsserver = {
-			-- 	init_options = {
-			-- 		plugins = {
-			-- 			{
-			-- 				name = "@vue/typescript-plugin",
-			-- 				location = "/usr/lib/node_modules/@vue/typescript-plugin",
-			-- 				languages = { "javascript", "typescript", "vue" },
-			-- 			},
-			-- 		},
-			-- 	},
-			-- 	filetypes = {
-			-- 		"javascript",
-			-- 		"typescript",
-			-- 		"vue",
-			-- 	},
-			-- },
-
 			lua_ls = {
 				settings = {
 					Lua = {
@@ -132,6 +114,7 @@ return {
 			"black",
 			"prettier",
 		})
+
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 		require("mason-lspconfig").setup({

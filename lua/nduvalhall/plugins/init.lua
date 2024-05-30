@@ -1,7 +1,7 @@
 return {
 	require("nduvalhall.plugins.zenbones"),
 	require("nduvalhall.plugins.tokyonight"),
-	-- require("nduvalhall.plugins.nightfox"),
+	require("nduvalhall.plugins.nightfox"),
 	require("nduvalhall.plugins.comment"),
 	require("nduvalhall.plugins.textcase"),
 	require("nduvalhall.plugins.oil"),
