@@ -1,5 +1,7 @@
 return {
+	require("nduvalhall.plugins.kanagawa"),
 	require("nduvalhall.plugins.zenbones"),
+	require("nduvalhall.plugins.gruvbox"),
 	require("nduvalhall.plugins.tokyonight"),
 	require("nduvalhall.plugins.nightfox"),
 	require("nduvalhall.plugins.comment"),

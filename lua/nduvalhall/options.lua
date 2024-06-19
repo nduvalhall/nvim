@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.opt.backspace = "indent,eol,start"
-vim.opt.background = "light"
 vim.opt.number = true
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
