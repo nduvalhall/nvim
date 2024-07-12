@@ -1,4 +1,5 @@
 return {
+	require("nduvalhall.plugins.catppuccin"),
 	require("nduvalhall.plugins.kanagawa"),
 	require("nduvalhall.plugins.zenbones"),
 	require("nduvalhall.plugins.gruvbox"),
