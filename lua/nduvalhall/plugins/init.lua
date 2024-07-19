@@ -5,6 +5,7 @@ return {
 	require("nduvalhall.plugins.gruvbox"),
 	require("nduvalhall.plugins.tokyonight"),
 	require("nduvalhall.plugins.nightfox"),
+	require("nduvalhall.plugins.gruvbox"),
 	require("nduvalhall.plugins.comment"),
 	require("nduvalhall.plugins.textcase"),
 	require("nduvalhall.plugins.oil"),
