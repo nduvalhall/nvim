@@ -1,2 +1,2 @@
 vim.o.background = "dark"
-vim.cmd("colorscheme tokyonight-moon")
+vim.cmd("colorscheme monokai-pro-octagon")

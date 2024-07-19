@@ -1,6 +1,7 @@
 return {
 	require("nduvalhall.plugins.catppuccin"),
 	require("nduvalhall.plugins.kanagawa"),
+	require("nduvalhall.plugins.monokai"),
 	require("nduvalhall.plugins.zenbones"),
 	require("nduvalhall.plugins.gruvbox"),
 	require("nduvalhall.plugins.tokyonight"),
