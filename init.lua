@@ -97,7 +97,9 @@ local opts = {
 require("lazy").setup({
 	{
 		"folke/tokyonight.nvim",
-		config = { style = "moon" },
+		config = function()
+			vim.cmd("colorscheme tokyonight-moon")
+		end,
 	},
 
 	{ "numToStr/Comment.nvim" },
