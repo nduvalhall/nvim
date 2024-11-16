@@ -66,6 +66,23 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 	end,
 })
 
+local activate_poetry = function()
+	local match = vim.fn.glob(vim.fn.getcwd() .. "/poetry.lock")
+
+	if match ~= "" then
+		local poetry_env = vim.fn.trim(vim.fn.system("poetry env info -p"))
+		vim.env.VIRTUAL_ENV = poetry_env
+		vim.env.PATH = poetry_env .. "/bin:" .. vim.env.PATH
+	end
+end
+activate_poetry()
+
+vim.api.nvim_create_autocmd("DirChanged", {
+	callback = function()
+		activate_poetry()
+	end,
+})
+
 -- Lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -307,15 +324,12 @@ require("lazy").setup({
 					},
 				},
 
-				pyright = {
+				basedpyright = {
 					settings = {
-						python = {
-							analysis = {
-								autoSearchPaths = true,
-								diagnosticMode = "workspace",
-								useLibraryCodeForTypes = true,
-								typeCheckingMode = "strict",
-							},
+						analysis = {
+							useLibraryCodeForTypes = true,
+							autoSearchPaths = true,
+							diagnosticMode = "workspace",
 						},
 					},
 				},
@@ -344,6 +358,7 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"volar",
+				"basedpyright",
 				"lua_ls",
 				"shfmt",
 				"stylua",
