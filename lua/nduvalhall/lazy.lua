@@ -21,5 +21,4 @@ require('lazy').setup({
     spec = {
         { import = 'nduvalhall.plugins' },
     },
-    checker = { enabled = true },
 })
