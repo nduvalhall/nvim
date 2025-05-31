@@ -30,19 +30,18 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     end,
 })
 
-local activate_poetry = function()
-    local match = vim.fn.glob(vim.fn.getcwd() .. '/poetry.lock')
-
-    if match ~= '' then
-        local poetry_env = vim.fn.trim(vim.fn.system('poetry env info -p'))
-        vim.env.VIRTUAL_ENV = poetry_env
-        vim.env.PATH = poetry_env .. '/bin:' .. vim.env.PATH
-    end
-end
-activate_poetry()
-
-vim.api.nvim_create_autocmd('DirChanged', {
+vim.api.nvim_create_autocmd('VimEnter', {
     callback = function()
-        activate_poetry()
+        if vim.fn.argc() == 0 then
+            require('fzf-lua').files()
+        end
     end,
 })
+
+vim.api.nvim_create_user_command('DeleteSwapFiles', function()
+    local swap_dir = vim.fn.expand('~/.local/state/nvim/swap/')
+    local deleted = vim.fn.delete(swap_dir, 'rf')
+    if deleted == 0 then
+        vim.fn.mkdir(swap_dir, 'p')
+    end
+end, {})
