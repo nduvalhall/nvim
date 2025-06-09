@@ -4,6 +4,6 @@ return {
     opts = {
         keymap = { preset = 'default', ['<C-e>'] = { 'hide', 'show', 'fallback' } },
         signature = { enabled = true, trigger = { enabled = false } },
-        completion = { menu = { auto_show = false } },
+        completion = { accept = { auto_brackets = { enabled = false } }, menu = { auto_show = false } },
     },
 }

@@ -12,7 +12,7 @@ local formatters = {
         },
     },
     prettier = {
-        filetypes = { 'javascript', 'typescript', 'json', 'vue', 'svelte' },
+        filetypes = { 'javascript', 'typescript', 'json', 'vue', 'svelte', 'markdown', 'yaml' },
         cmds = { { 'prettier', '--write' } },
     },
     ocamlformat = {
