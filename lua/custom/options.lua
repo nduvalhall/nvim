@@ -27,3 +27,12 @@ vim.opt.foldcolumn = '0'
 vim.opt.foldtext = ''
 vim.opt.foldlevel = 99
 vim.opt.foldnestmax = 99
+vim.opt.winborder = 'rounded'
+vim.opt.swapfile = false
+
+vim.filetype.add({
+    extension = {
+        mly = 'menhir',
+        mll = 'ocamllex',
+    },
+})

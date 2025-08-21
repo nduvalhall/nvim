@@ -1,1 +1,3 @@
-vim.opt.shiftwidth = 2
+vim.opt_local.shiftwidth = 2
+
+require('ibl').setup({ enabled = false })

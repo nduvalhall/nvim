@@ -8,6 +8,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR>')
 vim.keymap.set('n', '<CR>', 'o<Esc>')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { silent = true })
 
 -- lsp
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
