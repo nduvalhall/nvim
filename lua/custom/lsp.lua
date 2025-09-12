@@ -23,7 +23,6 @@ vim.lsp.config['basedpyright'] = {
     root_markers = { 'pyproject.toml' },
     settings = {
         basedpyright = {
-            pythonPath = vim.fn.expand('.') .. '/.venv/bin/python',
             disableOrganizeImports = true,
             analysis = {
                 autoSearchPaths = true,
