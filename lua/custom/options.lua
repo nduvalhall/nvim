@@ -21,18 +21,13 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-vim.opt.foldcolumn = '0'
-vim.opt.foldtext = ''
-vim.opt.foldlevel = 99
-vim.opt.foldnestmax = 99
-vim.opt.winborder = 'rounded'
 vim.opt.swapfile = false
+vim.opt.cursorline = true
 
 vim.filetype.add({
     extension = {
         mly = 'menhir',
         mll = 'ocamllex',
+        tbd = 'tdb',
     },
 })

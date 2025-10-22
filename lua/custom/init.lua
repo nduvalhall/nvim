@@ -1,6 +1,6 @@
 require('custom.options')
 require('custom.lazy')
 require('custom.extras')
-require('custom.lsp')
 require('custom.formatting')
 require('custom.keymaps')
+require('custom.colorscheme')
