@@ -45,3 +45,12 @@ vim.api.nvim_create_user_command('DeleteSwapFiles', function()
         vim.fn.mkdir(swap_dir, 'p')
     end
 end, {})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client ~= nil then
+            client.server_capabilities.semanticTokensProvider = nil
+        end
+    end,
+})
