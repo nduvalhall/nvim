@@ -1,5 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.g.gruvbox_material_background = 'soft'
 
 vim.opt.backspace = 'indent,eol,start'
 vim.opt.number = true
@@ -22,12 +23,18 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.swapfile = false
+vim.opt.cursorline = false
+vim.opt.winborder = 'rounded'
 vim.opt.cursorline = true
+vim.opt.colorcolumn = '100'
+vim.opt.list = true
+vim.opt.listchars = { leadmultispace = '.   ', tab = '.  ' }
 
 vim.filetype.add({
     extension = {
         mly = 'menhir',
         mll = 'ocamllex',
         tbd = 'tdb',
+        porth = 'porth',
     },
 })

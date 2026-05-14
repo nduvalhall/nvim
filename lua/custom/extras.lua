@@ -38,14 +38,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
     end,
 })
 
-vim.api.nvim_create_user_command('DeleteSwapFiles', function()
-    local swap_dir = vim.fn.expand('~/.local/state/nvim/swap/')
-    local deleted = vim.fn.delete(swap_dir, 'rf')
-    if deleted == 0 then
-        vim.fn.mkdir(swap_dir, 'p')
-    end
-end, {})
-
 vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id)

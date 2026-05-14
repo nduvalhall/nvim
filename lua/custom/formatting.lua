@@ -25,6 +25,12 @@ local formatters = {
             return { { 'ocamlformat', '--enable-outside-detected-project', '--name', filepath, '-' } }
         end,
     },
+    rustfmt = {
+        filetyps = { 'rust' },
+        cmds = function(filepath)
+            return { { 'rustfmt', filepath } }
+        end,
+    },
 }
 
 local exists = function(e, l)
@@ -111,6 +117,7 @@ local format_buffer = function(bufnr, ft, filepath)
 
     vim.fn.winrestview(view)
 end
+
 
 vim.api.nvim_create_autocmd('BufWritePost', {
     callback = function(args)

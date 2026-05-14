@@ -3,4 +3,6 @@ require('custom.lazy')
 require('custom.extras')
 require('custom.formatting')
 require('custom.keymaps')
-require('custom.colorscheme')
+require('custom.lsp')
+require('custom.colours')
+
