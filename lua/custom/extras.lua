@@ -1,0 +1,99 @@
+if vim.fn.has('wsl') == 1 then
+    vim.api.nvim_create_autocmd('TextYankPost', {
+        group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+        callback = function()
+            vim.fn.system('clip.exe', vim.fn.getreg('"'))
+        end,
+    })
+end
+
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
+})
+
+local lastplace = vim.api.nvim_create_augroup('LastPlace', {})
+vim.api.nvim_clear_autocmds({ group = lastplace })
+vim.api.nvim_create_autocmd('BufReadPost', {
+    group = lastplace,
+    pattern = { '*' },
+    desc = 'remember last cursor place',
+    callback = function()
+        local mark = vim.api.nvim_buf_get_mark(0, '"')
+        local lcount = vim.api.nvim_buf_line_count(0)
+        if mark[1] > 0 and mark[1] <= lcount then
+            pcall(vim.api.nvim_win_set_cursor, 0, mark)
+        end
+    end,
+})
+
+vim.api.nvim_create_autocmd('VimEnter', {
+    callback = function()
+        if vim.fn.argc() == 0 then
+            require('fzf-lua').files()
+        end
+    end,
+})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client ~= nil then
+            client.server_capabilities.semanticTokensProvider = nil
+        end
+    end,
+})
+
+-- custom jumplist
+
+local jumplist = {}
+
+local function push_jump()
+    table.insert(jumplist, {
+        buf = vim.api.nvim_get_current_buf(),
+        win = vim.api.nvim_get_current_win(),
+        pos = vim.api.nvim_win_get_cursor(0),
+    })
+end
+
+local function pop_jump()
+    local jump = table.remove(jumplist)
+    if jump and vim.api.nvim_buf_is_loaded(jump.buf) and vim.api.nvim_win_is_valid(jump.win) then
+        vim.api.nvim_set_current_win(jump.win)
+        vim.api.nvim_win_set_cursor(jump.win, jump.pos)
+    end
+end
+
+local arrow_keys = { '<up>', '<down>', '<C-d>', '<C-u>' }
+for _, key in ipairs(arrow_keys) do
+    vim.keymap.set('n', key, function()
+        local count = vim.v.count
+        if key == '<C-d>' or key == '<C-u>' or count >= 10 then
+            push_jump()
+        end
+        local feed = vim.api.nvim_replace_termcodes((count > 0 and count or 1) .. key, true, false, true)
+        vim.api.nvim_feedkeys(feed, 'n', false)
+    end, { noremap = true })
+end
+
+local normal_keys = { 'G', 'gg' }
+for _, key in ipairs(normal_keys) do
+    vim.keymap.set('n', key, function()
+        push_jump()
+        vim.cmd('normal! ' .. key)
+    end, { noremap = true })
+end
+
+vim.api.nvim_create_autocmd("CmdlineLeave", {
+    callback = function()
+        local cmd = vim.fn.getcmdline()
+        if cmd:match("^%d+$") then
+            push_jump()
+        end
+    end,
+})
+
+vim.keymap.set('n', '<C-o>', pop_jump, { noremap = true })
