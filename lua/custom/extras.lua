@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 vim.api.nvim_create_autocmd('VimEnter', {
     callback = function()
         if vim.fn.argc() == 0 then
-            require('fzf-lua').files()
+            require('fzf-lua').files({ previewer = false })
         end
     end,
 })
@@ -87,10 +87,10 @@ for _, key in ipairs(normal_keys) do
     end, { noremap = true })
 end
 
-vim.api.nvim_create_autocmd("CmdlineLeave", {
+vim.api.nvim_create_autocmd('CmdlineLeave', {
     callback = function()
         local cmd = vim.fn.getcmdline()
-        if cmd:match("^%d+$") then
+        if cmd:match('^%d+$') then
             push_jump()
         end
     end,

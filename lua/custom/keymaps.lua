@@ -22,7 +22,9 @@ vim.keymap.set('n', '<leader>e', require('oil').open)
 -- fzf
 local fzf = require('fzf-lua')
 vim.keymap.set('n', '<C-f>', fzf.blines)
-vim.keymap.set('n', '<leader>ff', fzf.files)
+vim.keymap.set('n', '<leader>ff', function()
+    fzf.files({ previewer = false })
+end)
 vim.keymap.set('n', '<leader>fs', fzf.live_grep)
 vim.keymap.set('n', '<leader>fc', fzf.grep_cword)
 vim.keymap.set('n', '<leader>fdd', fzf.diagnostics_document)
@@ -41,4 +43,3 @@ vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>')
 -- window
 vim.keymap.set('n', '<leader><', '<C-w>20<')
 vim.keymap.set('n', '<leader>>', '<C-w>20>')
-
