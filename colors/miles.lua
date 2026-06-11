@@ -24,6 +24,7 @@ local palette = {
     orange = '#f5c08a',
     yellow = '#fff493',
     green = '#bfdcb5',
+    lime_green = '#e7ffb4',
     cyan = '#9fdcd2',
     blue = '#a5c8e8',
     purple = '#cdb1e8',
@@ -36,6 +37,9 @@ highlight('ColorColumn', { bg = palette.bgg })
 highlight('Visual', { bg = palette.bggg })
 highlight('Visual', { bg = palette.bggg })
 highlight('CursorLineNr', { fg = palette.fg })
+highlight('NormalFloat', { bg = palette.bg, fg = palette.fg })
+highlight('FloatBorder', { bg = palette.bg, fg = palette.bggg })
+highlight('FloatTitle', { bg = palette.bg, fg = palette.fg })
 
 local plain = { fg = palette.fg }
 highlight('Operator', plain)
@@ -43,12 +47,19 @@ highlight('Identifier', plain)
 highlight('@constructor.lua', plain)
 highlight('@variable', plain)
 highlight('@module.python', plain)
+highlight('@type.definition.python', plain)
+highlight('@module.tbd', plain)
 
-local fun = { fg = palette.yellow }
+local fun = { fg = palette.lime_green }
 highlight('Function', fun)
 highlight('@function.builtin.python', fun)
 highlight('Directory', fun)
 highlight('@constructor.python', fun)
+
+local type = { fg = palette.muted }
+highlight('Type', type)
+highlight('@type.builtin.python', type)
+highlight('@type.python', type)
 
 local keyword = { fg = palette.muted }
 highlight('Keyword', keyword)
@@ -59,18 +70,15 @@ local comment = { fg = palette.comment }
 highlight('Comment', comment)
 highlight('LineNr', comment)
 
-local special = { fg = palette.red }
+local special = { fg = palette.purple }
 highlight('Special', special)
 highlight('Constant', special)
 
 local type = { fg = palette.muted }
-highlight('Type', type)
-highlight('@type.builtin.python', type)
 highlight('@constant.builtin.python', type)
-highlight('@type.python', type)
 highlight('Operator', type)
 highlight('Delimiter', type)
 highlight('@punctuation.special.python', type)
 
-local str = { fg = palette.green }
+local str = { fg = palette.blue }
 highlight('String', str)
