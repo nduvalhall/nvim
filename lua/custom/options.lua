@@ -26,7 +26,7 @@ vim.opt.swapfile = false
 vim.opt.cursorline = false
 vim.opt.winborder = 'rounded'
 vim.opt.cursorline = true
-vim.opt.colorcolumn = '100'
+vim.opt.colorcolumn = '88'
 vim.opt.list = true
 vim.opt.listchars = { leadmultispace = '.   ', tab = '.  ' }
 

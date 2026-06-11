@@ -1,1 +1,1 @@
-vim.cmd.colorscheme('miles')
+vim.cmd.colorscheme('rose-pine')
