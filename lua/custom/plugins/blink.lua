@@ -40,7 +40,7 @@ return {
         completion = {
             menu = { auto_show_delay_ms = 0 },
             documentation = { auto_show = false },
-            accept = {auto_brackets = { enabled = false}}
+            accept = { auto_brackets = { enabled = false } },
         },
 
         -- Default list of enabled providers defined so that you can extend it
@@ -55,6 +55,8 @@ return {
         --
         -- See the fuzzy documentation for more information
         fuzzy = { implementation = 'prefer_rust_with_warning' },
+
+        cmdline = { enabled = false },
     },
     opts_extend = { 'sources.default' },
 }

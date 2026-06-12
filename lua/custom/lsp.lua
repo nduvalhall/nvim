@@ -55,3 +55,26 @@ vim.lsp.config['ts_ls'] = {
         },
     },
 }
+
+-- ocaml
+vim.lsp.config['ocamlls'] = {
+    cmd = { 'ocamllsp' },
+    filetypes = {
+        'ocaml',
+        'ocaml.interface',
+        'ocaml.menhir',
+        'ocaml.ocamllex',
+        'reason',
+        'dune',
+    },
+    root_markers = {
+        '*.opam',
+        'esy.json',
+        'package.json',
+        'dune-project',
+        'dune-workspace',
+        '.git',
+    },
+}
+
+vim.lsp.enable('ocamlls')
