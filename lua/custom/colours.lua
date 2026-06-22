@@ -1,1 +1,1 @@
-vim.cmd.colorscheme('miles')
+vim.cmd.colorscheme('github_light')

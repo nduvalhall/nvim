@@ -43,6 +43,7 @@ highlight('FloatTitle', { bg = palette.bg, fg = palette.fg })
 
 local plain = { fg = palette.fg }
 highlight('Operator', plain)
+highlight('Statement', plain)
 highlight('Identifier', plain)
 highlight('@constructor.lua', plain)
 highlight('@variable', plain)

@@ -1,8 +1,8 @@
 -- general
-vim.keymap.set('n', 'h', '<Left>')
-vim.keymap.set('n', 'j', '<Down>')
-vim.keymap.set('n', 'k', '<Up>')
-vim.keymap.set('n', 'l', '<Right>')
+vim.keymap.set('n', '<Left>', 'h')
+vim.keymap.set('n', '<Down>', 'j')
+vim.keymap.set('n', '<Up>', 'k')
+vim.keymap.set('n', '<Right>', 'l')
 vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>')
 vim.keymap.set('n', '<Esc>', '<cmd>nohl<CR>')
 vim.keymap.set('n', '<CR>', 'o<Esc>')
