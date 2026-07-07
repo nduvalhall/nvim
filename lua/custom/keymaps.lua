@@ -41,5 +41,5 @@ vim.keymap.set('n', 'ga', fzf.lsp_code_actions)
 vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>')
 
 -- window
-vim.keymap.set('n', '<leader><', '<C-w>20<')
-vim.keymap.set('n', '<leader>>', '<C-w>20>')
+vim.keymap.set('n', '<C-w><', '<C-w>10<')
+vim.keymap.set('n', '<C-w>>', '<C-w>10>')

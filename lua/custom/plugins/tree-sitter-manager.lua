@@ -20,6 +20,7 @@ return {
             languages = {
                 tbd = {
                     install_info = {
+                        branch = 'main',
                         url = 'https://github.com/tbd-lang/tree-sitter-tbd',
                         use_repo_queries = true,
                     },

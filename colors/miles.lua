@@ -50,6 +50,8 @@ highlight('@variable', plain)
 highlight('@module.python', plain)
 highlight('@type.definition.python', plain)
 highlight('@module.tbd', plain)
+highlight('@punction.bracket', plain)
+highlight('@punction.brace', plain)
 
 local fun = { fg = palette.lime_green }
 highlight('Function', fun)
@@ -73,7 +75,8 @@ highlight('LineNr', comment)
 
 local special = { fg = palette.purple }
 highlight('Special', special)
-highlight('Constant', special)
+
+highlight('Constant', { fg = palette.orange })
 
 local type = { fg = palette.muted }
 highlight('@constant.builtin.python', type)

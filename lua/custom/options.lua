@@ -36,6 +36,9 @@ vim.filetype.add({
         mly = 'menhir',
         mll = 'ocamllex',
         tbd = 'tbd',
-        porth = 'porth',
     },
+})
+
+vim.diagnostic.config({
+    underline = true,
 })
