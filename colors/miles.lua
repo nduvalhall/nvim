@@ -10,14 +10,14 @@ end
 
 local palette = {
     -- backgrounds / grays
-    bg = '#2f3541',
-    bgg = '#3c4353',
-    bggg = '#4f5a6e', -- visual
-    comment = '#63708b',
-    muted = '#a7afc0', -- keyword / type
+    bg = '#2d3443',
+    bgg = '#394256',
+    bggg = '#4c5972', -- visual
+    comment = '#5f6e8f',
+    muted = '#a4aec3', -- keyword / type
     fg = '#eceef2',
-    fg_lite = '#f4f6fa',
-    fg_max = '#fbfcff',
+    fg_lite = '#f6f7f9',
+    fg_max = '#fdfdfd',
 
     -- accents
     red = '#ffb1b1',
