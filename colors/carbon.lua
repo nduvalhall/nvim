@@ -1,7 +1,7 @@
 vim.o.termguicolors = true
 vim.cmd [[syntax clear]]
 vim.cmd [[hi clear]]
-vim.g.colors_name = 'miles'
+vim.g.colors_name = 'carbon'
 vim.opt.background = 'dark'
 
 local function highlight(group, opts)
@@ -9,83 +9,80 @@ local function highlight(group, opts)
 end
 
 local palette = {
-    -- backgrounds / grays
-    bg = '#2d3443',
-    bgg = '#394256',
-    bggg = '#4c5972', -- visual
-    comment = '#5f6e8f',
-    muted = '#a4aec3', -- keyword / type
-    fg = '#eceef2',
-    fg_lite = '#f6f7f9',
-    fg_max = '#fdfdfd',
+    -- carbon backgrounds / grays
+    bg = '#121212',
+    bgg = '#1a1a1a',
+    bggg = '#252525', -- visual
+    comment = '#666666',
+    muted = '#9a9a9a', -- keyword / type
+    fg = '#e6e6e6',
+    fg_lite = '#f0f0f0',
+    fg_max = '#ffffff',
 
     -- accents
-    red = '#ffb1b1',
-    orange = '#f5c08a',
-    yellow = '#fff493',
-    green = '#bfdcb5',
-    lime_green = '#e7ffb4',
-    cyan = '#9fdcd2',
-    blue = '#a5c8e8',
-    purple = '#cdb1e8',
-    brown = '#d4a59a',
+    red = '#ff6b6b',
+    orange = '#f29e74',
+    yellow = '#ffd54a',
+    green = '#b8d982',
+    lime_green = '#ffd54a', -- functions
+    cyan = '#76d4cf',
+    blue = '#82b8e8',
+    purple = '#c59be8',
+    brown = '#c99585',
 }
 
 highlight('Normal', { bg = palette.bg, fg = palette.fg })
 highlight('CursorLine', { bg = palette.bgg })
 highlight('ColorColumn', { bg = palette.bgg })
 highlight('Visual', { bg = palette.bggg })
-highlight('Visual', { bg = palette.bggg })
-highlight('CursorLineNr', { fg = palette.fg })
+highlight('CursorLineNr', { fg = palette.yellow })
 highlight('NormalFloat', { bg = palette.bg, fg = palette.fg })
 highlight('FloatBorder', { bg = palette.bg, fg = palette.bggg })
-highlight('FloatTitle', { bg = palette.bg, fg = palette.fg })
+highlight('FloatTitle', { bg = palette.bg, fg = palette.yellow })
 
 local plain = { fg = palette.fg }
-highlight('Operator', plain)
 highlight('Statement', plain)
 highlight('Identifier', plain)
 highlight('@constructor.lua', plain)
 highlight('@variable', plain)
 highlight('@type.definition.python', plain)
-highlight('@punction.bracket', plain)
-highlight('@punction.brace', plain)
+highlight('@punctuation.bracket', plain)
+highlight('@punctuation.brace', plain)
 
-local fun = { fg = palette.lime_green }
+local fun = { fg = palette.yellow }
 highlight('Function', fun)
+highlight('@function', fun)
+highlight('@function.builtin', fun)
 highlight('@function.builtin.python', fun)
 highlight('Directory', fun)
 highlight('@constructor.python', fun)
 
-local module = { fg = palette.lime_green }
-highlight('@module.tbd', module)
+local module = { fg = palette.yellow, italic = true }
+highlight('@module', module)
+highlight('@module.lua', module)
 highlight('@module.python', module)
 
 local type = { fg = palette.muted }
 highlight('Type', type)
+highlight('@type', type)
 highlight('@type.builtin.python', type)
 highlight('@type.python', type)
 highlight('@path', type)
+highlight('@constant.builtin.python', type)
 
 local keyword = { fg = palette.muted }
 highlight('Keyword', keyword)
+highlight('@keyword', keyword)
 highlight('@variable.builtin.python', keyword)
 highlight('Operator', keyword)
 highlight('Delimiter', keyword)
 highlight('@punctuation.special.python', keyword)
 
--- comment
-local comment = { fg = palette.comment }
+local comment = { fg = palette.comment, italic = true }
 highlight('Comment', comment)
-highlight('LineNr', comment)
+highlight('@comment', comment)
+highlight('LineNr', { fg = palette.comment })
 
-local special = { fg = palette.purple }
-highlight('Special', special)
-
+highlight('Special', { fg = palette.purple })
 highlight('Constant', { fg = palette.orange })
-
-local type = { fg = palette.muted }
-highlight('@constant.builtin.python', type)
-
-local str = { fg = palette.blue }
-highlight('String', str)
+highlight('String', { fg = palette.blue })

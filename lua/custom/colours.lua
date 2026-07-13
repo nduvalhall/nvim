@@ -1,4 +1,4 @@
-vim.cmd.colorscheme('miles')
+vim.cmd.colorscheme('catppuccin')
 
 local function highlight(group, opts)
     vim.api.nvim_set_hl(0, group, opts)

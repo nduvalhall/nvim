@@ -1,3 +1,4 @@
+require('custom.ts-fix')
 require('custom.options')
 require('custom.lazy')
 require('custom.extras')
@@ -5,4 +6,3 @@ require('custom.formatting')
 require('custom.keymaps')
 require('custom.lsp')
 require('custom.colours')
-

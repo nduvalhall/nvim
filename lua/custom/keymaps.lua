@@ -43,3 +43,9 @@ vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>')
 -- window
 vim.keymap.set('n', '<C-w><', '<C-w>10<')
 vim.keymap.set('n', '<C-w>>', '<C-w>10>')
+
+-- update TBD TS
+vim.keymap.set('n', '<leader>u', function()
+    vim.cmd [[TSUninstall tbd]]
+    vim.cmd [[TSInstall tbd]]
+end)
