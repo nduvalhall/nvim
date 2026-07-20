@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 vim.api.nvim_create_autocmd('VimEnter', {
     callback = function()
         if vim.fn.argc() == 0 then
-            require('fzf-lua').files({ previewer = false })
+            require('fzf-lua').files()
         end
     end,
 })
