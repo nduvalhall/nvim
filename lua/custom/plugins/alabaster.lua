@@ -1,0 +1,1 @@
+return { 'mduvalhall/alabaster.nvim' }
