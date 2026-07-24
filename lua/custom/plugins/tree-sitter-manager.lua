@@ -1,5 +1,6 @@
 return {
     'romus204/tree-sitter-manager.nvim',
+    commit = 'f18e545',
     config = function()
         require('tree-sitter-manager').setup({
             ensure_installed = {
